@@ -1,0 +1,81 @@
+<div *ngIf="errorMessage != null" class="alert alert-danger" role="alert">
+  {{errorMessage}}
+</div>
+
+<!-- Add Player Form -->
+<div *ngIf="!hideForm" class="card my-5">
+  <h3>Ajout d'un nouvel utilisateur</h3>
+  <div class="card-body">
+    <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="serverError != null">
+      <!-- Errors -->
+      <div *ngFor="let error of serverError">
+        {{error}}
+      </div>
+    </div>
+    <form (ngSubmit)="addAPlayer()" #playerForm="ngForm">
+
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" [(ngModel)]="newPlayer.firstName"
+               class="form-control" id="firstName" name="firstName" placeholder="Veuillez indiquer votre prénom"
+               required #firstName="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Nom de famille</label>
+        <input type="text" [(ngModel)]="newPlayer.lastName"
+               class="form-control" id="lastName" name="lastName" placeholder="Veuillez indiquer votre nom de famille"
+               required #lastName="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="mail">Email</label>
+        <input type="email" [(ngModel)]="newPlayer.mail"
+               class="form-control" id="mail" name="mail" placeholder="Veuillez indiquer une adresse mail valide"
+                #mail="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$" required>
+      </div>
+      <button type="submit" [disabled]="!playerForm.form.valid" class="btn btn-info">Valider</button>
+      <button type="cancel" class="btn btn-warning" (click)="hideForm = !hideForm">Annuler</button>
+    </form>
+  </div>
+</div>
+
+
+<div class="my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped mt-4">
+      <thead class="thead-dark">
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Mail</th>
+        <th>Date d'inscription</th>
+        <th>Gestion</th>
+        <th></th>
+      </thead>
+      <tbody class="tbody">
+        <tr class="bg-light">
+          <td>
+            <button type="submit" class="btn btn-success" (click)="hideForm = !hideForm"> + Ajouter</button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let player of players" class="bg-light">
+          <td>{{ player.firstName }}</td>
+          <td>{{ player.lastName }}</td>
+          <td>{{ player.mail }}</td>
+          <td>{{ player.subscribeDate | date: 'shortDate' }}</td>
+          <td>
+            <button type="submit" class="btn btn-info" (click)="goTo(player.id)">Modifier</button>
+          </td>
+          <td>
+            <button type="cancel" class="btn btn-danger" (click)="removePlayer(player.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
