@@ -1,0 +1,10 @@
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/Application.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/model/player/impl/PlayerEntity.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/service/PlayerService.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/mapper/player/PlayerAPIMapper.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/mapper/player/PlayerEntityMapper.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/controller/HomeController.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/model/player/impl/PlayerAPI.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/repository/PlayerRepository.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/controller/PlayerController.java
+/Users/ariche/Downloads/Prono/pronoback-init/src/main/java/com/apside/prono/model/player/model/PlayerModel.java
